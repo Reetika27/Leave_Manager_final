@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave_Manager</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+          div
+        {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <form action="/deleteLeaveEntitlement" method="post" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Delete Leave Entitlement</p>
+
+            <label for="designationNames" class="sr-only">Designation:</label>
+            <select class="form-control inputstl" id="designationNames" name="designationNames">
+                <option value="" class="form-control mb4">Select a designation</option>
+                <option th:each="designationL: ${designationList}"
+                        th:value="${designationL.designation}"
+                        th:text="${designationL.designation}">
+                </option>
+            </select><br>
+
+            <label for="totalNumberOfPermissibleLeaves" class="sr-only">Total Permissible Leaves</label>
+            <input type="text" id="totalNumberOfPermissibleLeaves" class="form-control mb-4"
+                   name="totalNumberOfPermissibleLeaves" placeholder="Total Permissible Leaves" required>
+
+            <button class="btn btn-primary bt-lg my-4" type="submit">Delete Leave Entitlement</button>
+        </form>
+    </div>
+</div>
+<strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>

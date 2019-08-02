@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave_Manager</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+          div
+        {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        .control-label{
+        text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+    <form action="/searchLeave" method="post" class="text-center border border-light p-5">
+        <p class="h4 mb-4">Search Leave</p>
+
+        <label for="leaveId1" class="sr-only">Leave Id</label>
+        <input type="text" id="leaveId1" class="form-control mb-4"  name="leaveId1" placeholder="Leave Id(enter -1 to disable this search criteria)" autofocus></input>
+
+        <label for="userId1" class="sr-only">User Id</label>
+        <input type="text" id="userId1" class="form-control mb-4" name="userId1" placeholder="User id (enter -1 to disable this search criteria)">
+
+        <label for="startDate1" text-align="left">Start Date: </label>
+        <input type="date" id="startDate1" class="form-control mb-4" name="startDate1" placeholder="Start Date"
+               >
+
+        <label for="endDate1" text-align="left">End Date: </label>
+        <input type="date" id="endDate1" class="form-control mb-4" name="endDate1" placeholder="end Date" >
+
+        <label for="reason" class="sr-only">Reason</label>
+        <input type="text" id="reason" class="form-control mb-4" name="reason" placeholder="Reason">
+
+        <label for="status" class="sr-only">Status</label>
+        <select class="form-control inputstl" id="status" name="status">
+            <option value="" class="form-control mb4">Select correct status for the leave</option>
+            <option>Approved</option>
+            <option>Pending</option>
+        </select><br>
+
+
+        <label for="lastUpdateUser" class="sr-only">Last Update User</label>
+       <input type="text" id="lastUpdateUser" class="form-control mb-4" name="lastUpdateUser" placeholder="Last Update User"></input>
+
+        <label for="startDateBound">Start Date Bound</label>
+        <input type="date" id="startDateBound" class="form-control mb-4" name="startDateBound"></input><br>
+
+        <label for="endDateBound">End Date Bound</label>
+        <input type="date" id="endDateBound" class="form-control mb-4"  name="endDateBound"></input><br>
+
+        <button class="btn btn-primary bt-lg my-4" type="submit">Search Leave</button>
+
+    </form>
+</div>
+</div>
+    <strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>

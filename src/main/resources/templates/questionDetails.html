@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Leave_Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+
+    <style>
+        table{
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<table class="table table-bordered table-condensed">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Question</th>
+        <th>Last Access User</th>
+        <th>Last Update Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="questionL : ${questions}">
+        <td th:text="${questionL.id}">Id</td>
+        <td th:text="${questionL.question}">Question</td>
+        <td th:text="${questionL.lastAccessUser}">Last Access User</td>
+        <td th:text="${questionL.lastUpdateTime}">Last Update Time</td>
+
+    </tr>
+    </tbody>
+</table>
+<strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>

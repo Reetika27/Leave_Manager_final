@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Leave_Manager</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+        div
+        {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <form action="/login" method="post" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Login</p>
+            <label for="email" class="sr-only">Email id:</label>
+            <input type="email" id="email" name="email" class="form-control mb-4" placeholder="Email" required
+                   autofocus>
+
+            <label for="password" class="sr-only">Password:</label>
+            <input type="password" id="password" name="password" class="form-control mb-4" placeholder="Password"
+                   required>
+
+            <div class="d-flex justify-content-around">
+                <div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                        <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                    </div>
+                </div>
+                <div>
+                    <a href="">Forgot password?</a>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-block my-4" type="submit">Login</button>
+            <p>Not a member?</p> <a href="/addUserForm">Create an account</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

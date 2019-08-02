@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave_Manager</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+          div
+        {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        .control-label{
+        text-align: left;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <form action="/addUser" method="post" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Register</p>
+
+            <label for="userName" class="sr-only">User Name</label>
+            <input type="text" id="userName" class="form-control mb-4" name="userName" placeholder="Name of the User"
+                   required autofocus>
+
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" class="form-control mb-4" name="email" placeholder="Email" required>
+
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" class="form-control mb-4" name="password" placeholder="Password"
+                   required>
+
+            <label for="role" class="sr-only">Role</label>
+            <input type="text" id="role" class="form-control mb-4" name="role" placeholder="Role" required>
+
+            <label for="securityQuestion" class="sr-only">SecurityQuestion:</label>
+            <select class="form-control inputstl" id="securityQuestion" name="securityQuestion">
+                <option value="" class="form-control mb4">Select a question</option>
+                <option th:each="questionL: ${questions}"
+                        th:value="${questionL.question}"
+                        th:text="${questionL.question}">
+                </option>
+            </select><br>
+
+            <label for="securityQuestionAnswer" class="sr-only">Security Question Answer</label>
+            <input type="text" id="securityQuestionAnswer" class="form-control mb-4" name="securityQuestionAnswer"
+                   placeholder="Answer">
+
+                <label for="designation" class="sr-only">Designation:</label>
+                    <select class="form-control inputstl" id="designation" name="designation">
+                        <option value="" class="form-control mb4">Select a designation</option>
+                        <option th:each="designationL: ${designations}"
+                                th:value="${designationL.designation}"
+                                th:text="${designationL.designation}">
+                        </option>
+                    </select>
+
+
+
+            <button class="btn btn-primary bt-lg my-4" type="submit">Add User</button>
+        </form>
+    </div>
+</div>
+<strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Leave_Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.history.forward();
+        function no_back()
+        {
+            window.history.forward();
+        }
+    </script>
+    <style>
+        table{
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body onLoad="no_back()" onpageshow="if (event.persisted) no_back();" onunload="">
+<div class="container">
+    <form action="/logout" method="post">
+        <div class="col md-4 text-center">
+            <button class="btn btn-primary btn-md my-4" type="submit" style="float:right">Logout</button>
+        </div>
+    </form>
+    <h1 align="center">Dashboard</h1>
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>Function</th>
+            <th>Link</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Show Question</td>
+            <td><a href="/searchQuestionsForm">Show</a></td>
+        </tr>
+        <tr>
+            <td>Add Question</td>
+            <td><a href="/addQuestionForm">Add</a></td>
+        </tr>
+        <tr>
+            <td>UpdateQuestion</td>
+            <td><a href="/updateQuestionForm">Update</a></td>
+        </tr>
+        <tr>
+            <td>Delete Question</td>
+            <td><a href="/deleteQuestionForm">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Show User</td>
+            <td><a href="/searchUsersForm">Show</a></td>
+        </tr>
+        <tr>
+            <td>Add User</td>
+            <td><a href="/addUserForm">Add</a></td>
+        </tr>
+        <tr>
+            <td>Update User</td>
+            <td><a href="/updateUserForm">Update</a></td>
+        </tr>
+        <tr>
+            <td>Delete User</td>
+            <td><a href="/deleteUserForm">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Show Leave Entitlement</td>
+            <td><a href="/searchDesignationsForm">Show</a></td>
+        </tr>
+        <tr>
+            <td>Add leave Entitlement</td>
+            <td><a href="/addLeaveEntitlementForm">Add</a></td>
+        </tr>
+        <tr>
+            <td>Update leave Entitlement</td>
+            <td><a href="/updateLeaveEntitlementForm">Update</a></td>
+        </tr>
+        <tr>
+            <td>Delete leave Entitlement</td>
+            <td><a href="/deleteLeaveEntitlementForm">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Add leave</td>
+            <td><a href="/addLeaveForm">Add</a></td>
+        </tr>
+        <tr>
+            <td>Update leave</td>
+            <td><a href="/updateLeaveForm">Update</a></td>
+        </tr>
+        <tr>
+            <td>Delete leave</td>
+            <td><a href="/deleteLeaveForm">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Search leave</td>
+            <td><a href="/searchLeaveForm">Show</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="/report" method="post">
+        <div class="col md-4 text-center">
+            <button class="btn btn-primary btn-lg my-4" type="submit">Generate Report</button>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

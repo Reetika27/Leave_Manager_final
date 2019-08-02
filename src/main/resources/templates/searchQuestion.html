@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave_Manager</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+          div
+        {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        .control-label{
+        text-align: left;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <form action="/searchQuestion" method="post" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Search Leave</p>
+
+            <label for="questionId" class="sr-only">QuestionId</label>
+            <input type="text" id="questionId" class="form-control mb-4" name="questionId"
+                   placeholder="Question Id( If question is to be searched by Id)">
+
+            <button class="btn btn-primary bt-lg my-4" type="submit">Search Question</button>
+        </form>
+    </div>
+</div>
+<strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Leave_Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        table{
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<table class="table table-bordered table-condensed">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Designation</th>
+        <th>Total Permissible Leaves</th>
+        <th>Last Update User</th>
+        <th>Last Update Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="designationL : ${designationList}">
+        <td th:text="${designationL.designationId}">Id</td>
+        <td th:text="${designationL.designation}">Designation</td>
+        <td th:text="${designationL.totalNumberOfPermissibleLeaves}">Total Permissible Leaves</td>
+        <td th:text="${designationL.lastUpdateUser}">Last Update User</td>
+        <td th:text="${designationL.lastUpdateTime}">Last Update Time</td>
+    </tr>
+    </tbody>
+</table>
+<strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>

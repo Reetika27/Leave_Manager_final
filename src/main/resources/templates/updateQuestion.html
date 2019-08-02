@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave_Manager</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+          div
+        {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <form action="/updateQuestion" method="post" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Update Question</p>
+
+            <label for="id" class="sr-only">Id</label>
+            <input type="text" name="id" id="id" class="form-control mb-4"
+                   placeholder="Question Id" required autofocus>
+
+            <label for="question" class="sr-only">Question</label>
+            <input type="text" name="question" id="question" class="form-control mb-4"
+                   placeholder="Question" required></input>
+
+            <button class="btn btn-primary bt-lg my-4" type="submit">Update Question</button>
+
+        </form>
+    </div>
+</div>
+<strong><a href="/index">Click here to go back</a></strong>
+</body>
+</html>
