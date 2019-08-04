@@ -122,8 +122,9 @@ public class UserController {
         return "updateUser";
     }
 
-    @GetMapping("/deleteUserForm")
-    public String deleteUser() {
+    @GetMapping(value="/deleteUserForm/{userId}")
+    public String deleteUser(@PathVariable("userId")int userId, ModelMap model) {
+        model.put("deleteUserForm", userService.getUserById(userId));
         return "deleteUser";
     }
 
