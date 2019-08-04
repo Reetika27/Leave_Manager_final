@@ -46,6 +46,7 @@
         <td th:text="${userL.lastUpdateUser}">Last Update User</td>
         <td th:text="${userL.lastUpdateTime}">Last Update Time</td>
         <td><a th:href="@{'/updateUserForm/'+ ${userL.userId}}">Update</a></td>
+        <td><a th:href="@{'/deleteUserForm/'+ ${userL.userId}}">Delete</a></td>
     </tr>
     </tbody>
 </table>
