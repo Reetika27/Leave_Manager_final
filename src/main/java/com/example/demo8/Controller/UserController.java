@@ -116,9 +116,9 @@ public class UserController {
         return "addUser";
     }
 
-    @RequestMapping("/updateUserForm")
-    public String updateUser(HttpServletRequest request) {
-        int userId = Integer.parseInt(request.getParameter("userId"));
+     @RequestMapping(value = "/updateUserForm/{userId}", method = RequestMethod.GET)
+    public String updateUser(@PathVariable("userId")int userId, ModelMap model) {
+        model.put("updateUserForm", userService.getUserById(userId));
         return "updateUser";
     }
 
