@@ -116,14 +116,15 @@ public class UserController {
         return "addUser";
     }
 
-    @RequestMapping("/updateUserForm")
-    public String updateUser(HttpServletRequest request) {
-        int userId = Integer.parseInt(request.getParameter("userId"));
+     @RequestMapping(value = "/updateUserForm/{userId}", method = RequestMethod.GET)
+    public String updateUser(@PathVariable("userId")int userId, ModelMap model) {
+        model.put("updateUserForm", userService.getUserById(userId));
         return "updateUser";
     }
 
-    @GetMapping("/deleteUserForm")
-    public String deleteUser() {
+    @GetMapping(value="/deleteUserForm/{userId}")
+    public String deleteUser(@PathVariable("userId")int userId, ModelMap model) {
+        model.put("deleteUserForm", userService.getUserById(userId));
         return "deleteUser";
     }
 

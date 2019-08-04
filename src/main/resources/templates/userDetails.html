@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -11,7 +15,6 @@
         table{
             width: 50%;
         }
-
     </style>
 </head>
 <body>
@@ -32,7 +35,7 @@
     </thead>
     <tbody>
     <tr th:each="userL : ${users}">
-        <td th:text="${userL.userId}"><input class="form-control" type="text" id="userId" name="userId" value="2" th:value="${userL.userId}">User Id</td>
+        <td th:text="${userL.userId}">User Id</td>
         <td th:text="${userL.userName}">User Name</td>
         <td th:text="${userL.email}">Email</td>
         <td th:text="${userL.password}">Password</td>
@@ -42,7 +45,8 @@
         <td th:text="${userL.designationId}">Designation Id</td>
         <td th:text="${userL.lastUpdateUser}">Last Update User</td>
         <td th:text="${userL.lastUpdateTime}">Last Update Time</td>
-        <td><form action="/updateUserForm" method="post"><button class="btn btn-sm" type="submit">Update</td>
+        <td><a th:href="@{'/updateUserForm/'+ ${userL.userId}}">Update</a></td>
+        <td><a th:href="@{'/deleteUserForm/'+ ${userL.userId}}">Delete</a></td>
     </tr>
     </tbody>
 </table>
